@@ -209,7 +209,7 @@ class XLNetRelativeAttention(nn.Module):
         self.q = nn.Parameter(torch.FloatTensor(config.d_model, self.n_head, self.d_head))  # 用于将输入转换为query流向量
         self.k = nn.Parameter(torch.FloatTensor(config.d_model, self.n_head, self.d_head))  # 用于将输入转换为key流向量
         self.v = nn.Parameter(torch.FloatTensor(config.d_model, self.n_head, self.d_head))  # 用于将输入转换为value流向量
-        self.o = nn.Parameter(torch.FloatTensor(config.d_model, self.n_head, self.d_head))  #
+        self.o = nn.Parameter(torch.FloatTensor(config.d_model, self.n_head, self.d_head))  # 用于对attention的输出进行后处理
         self.r = nn.Parameter(torch.FloatTensor(config.d_model, self.n_head, self.d_head))  # 表示相对位置编码
 
         self.r_r_bias = nn.Parameter(torch.FloatTensor(self.n_head, self.d_head))
